@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Cross Dissolve First View Controller-->
+        <!--First ViewController-->
         <scene sceneID="sda-wd-bE1">
             <objects>
-                <viewController id="X7P-ht-6Gt" customClass="CrossDissolveFirstViewController" customModule="CustomTransitions" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="X7P-ht-6Gt" userLabel="First ViewController" customClass="CrossDissolveFirstViewController" customModule="CustomTransitions" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nIH-8q-Sl8"/>
                         <viewControllerLayoutGuide type="bottom" id="Mwc-U7-n7h"/>
@@ -45,16 +45,23 @@
                             <constraint firstItem="jlQ-LA-Jte" firstAttribute="centerX" secondItem="bqe-2M-zNe" secondAttribute="centerX" id="wsu-Qx-73D"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="AIw-ly-XZt"/>
+                    <navigationItem key="navigationItem" title="Cross Dissolve" id="AIw-ly-XZt">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="lYV-Gh-9Lw">
+                            <connections>
+                                <segue destination="E2X-g9-jsg" kind="unwind" unwindAction="unwindToMenuViewControllerWithSender:" id="97u-Iu-QJK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pZp-sz-fIs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="E2X-g9-jsg" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="940" y="170.46476761619192"/>
         </scene>
-        <!--Cross Dissolve Second View Controller-->
+        <!--Second ViewController-->
         <scene sceneID="Lah-b0-4zl">
             <objects>
-                <viewController storyboardIdentifier="SecondViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Cna-xT-QY2" customClass="CrossDissolveSecondViewController" customModule="CustomTransitions" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SecondViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Cna-xT-QY2" userLabel="Second ViewController" customClass="CrossDissolveSecondViewController" customModule="CustomTransitions" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vNu-Sg-RC1"/>
                         <viewControllerLayoutGuide type="bottom" id="kGQ-Tz-I8S"/>
@@ -75,7 +82,7 @@
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="FhX-vu-NVz" kind="unwind" unwindAction="unwindToCrossDissolveViewControllerWithSender:" id="ckg-O3-zKJ"/>
+                                    <segue destination="FhX-vu-NVz" kind="unwind" unwindAction="unwindToCrossDissolveViewControllerWithSender:" id="6Q5-1m-Yxl"/>
                                 </connections>
                             </button>
                         </subviews>
