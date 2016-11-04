@@ -15,6 +15,8 @@
 		18AD53291DCA883D00884A84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18AD53271DCA883D00884A84 /* Main.storyboard */; };
 		18AD532B1DCA883D00884A84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 18AD532A1DCA883D00884A84 /* Assets.xcassets */; };
 		18AD532E1DCA883D00884A84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18AD532C1DCA883D00884A84 /* LaunchScreen.storyboard */; };
+		18AE2EA91DCD216800AB8563 /* Swipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AE2EA81DCD216800AB8563 /* Swipe.swift */; };
+		18AE2EAB1DCD219B00AB8563 /* Swipe.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18AE2EAA1DCD219B00AB8563 /* Swipe.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		18AD532A1DCA883D00884A84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		18AD532D1DCA883D00884A84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		18AD532F1DCA883D00884A84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18AE2EA81DCD216800AB8563 /* Swipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Swipe.swift; sourceTree = "<group>"; };
+		18AE2EAA1DCD219B00AB8563 /* Swipe.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Swipe.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,16 +73,26 @@
 		18AD53221DCA883D00884A84 /* CustomTransitions */ = {
 			isa = PBXGroup;
 			children = (
-				18AD53251DCA883D00884A84 /* MenuTableViewController.swift */,
-				188F60291DCAA35300625521 /* Gross Dissolve */,
 				18AD53231DCA883D00884A84 /* AppDelegate.swift */,
 				18AD53271DCA883D00884A84 /* Main.storyboard */,
+				18AD53251DCA883D00884A84 /* MenuTableViewController.swift */,
+				188F60291DCAA35300625521 /* Gross Dissolve */,
+				18AE2EA71DCD214B00AB8563 /* Swipe */,
 				18AD532A1DCA883D00884A84 /* Assets.xcassets */,
 				18AD532C1DCA883D00884A84 /* LaunchScreen.storyboard */,
 				18AD532F1DCA883D00884A84 /* Info.plist */,
 				180CB8F01DCBB6F30053C5CB /* CustomSegue.swift */,
 			);
 			path = CustomTransitions;
+			sourceTree = "<group>";
+		};
+		18AE2EA71DCD214B00AB8563 /* Swipe */ = {
+			isa = PBXGroup;
+			children = (
+				18AE2EA81DCD216800AB8563 /* Swipe.swift */,
+				18AE2EAA1DCD219B00AB8563 /* Swipe.storyboard */,
+			);
+			name = Swipe;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +157,7 @@
 			files = (
 				18AD532E1DCA883D00884A84 /* LaunchScreen.storyboard in Resources */,
 				18AD532B1DCA883D00884A84 /* Assets.xcassets in Resources */,
+				18AE2EAB1DCD219B00AB8563 /* Swipe.storyboard in Resources */,
 				188F602D1DCAA37A00625521 /* CrossDissolve.storyboard in Resources */,
 				18AD53291DCA883D00884A84 /* Main.storyboard in Resources */,
 			);
@@ -157,6 +172,7 @@
 			files = (
 				180CB8F11DCBB6F30053C5CB /* CustomSegue.swift in Sources */,
 				18AD53261DCA883D00884A84 /* MenuTableViewController.swift in Sources */,
+				18AE2EA91DCD216800AB8563 /* Swipe.swift in Sources */,
 				188F602B1DCAA36800625521 /* CrossDissolve.swift in Sources */,
 				18AD53241DCA883D00884A84 /* AppDelegate.swift in Sources */,
 			);
