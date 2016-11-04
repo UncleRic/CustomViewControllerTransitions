@@ -9,8 +9,13 @@ import Foundation
 import UIKit
 
 class SwipeFirstViewController:UIViewController {
+    let swipeTransitionDelegate = SwipeTransition()
     override func viewDidLoad() {
-        // ...do something
+        let interactiveTransitionRecognizer = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(handlePanGesture))
+         interactiveTransitionRecognizer.edges = UIRectEdge.right;
+        
+        
+        self.view.addGestureRecognizer(interactiveTransitionRecognizer)
     }
 
     // -----------------------------------------------------------------------------------------------------
@@ -22,13 +27,38 @@ class SwipeFirstViewController:UIViewController {
     // -----------------------------------------------------------------------------------------------------
     // MARK: - Action methods
     
-    @IBAction func interactiveTransitionRecognizerAction(sender:UIScreenEdgePanGestureRecognizer) {
+    @IBAction func handlePanGesture(sender:UIScreenEdgePanGestureRecognizer) {
         
+        
+        if (sender.state == UIGestureRecognizerState.began) {
+            self.performSegue(withIdentifier: "CustomTransition", sender: sender)
+        }
+        // Remaining cases are handled by the SwipeTransition.
+    }
+    
+    // -----------------------------------------------------------------------------------------------------
+    
+    @IBAction func unwindToSwipeFirstViewController(sender:UIStoryboardSegue) {
     }
 }
+
 
 // ===================================================================================================
 
 class SwipeSecondViewController:UIViewController {
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let interactiveTransitionRecognizer = UIScreenEdgePanGestureRecognizer(target: self, action: #selector(handleTransitionRecognizer))
+        interactiveTransitionRecognizer.edges = UIRectEdge.left
+        self.view.addGestureRecognizer(interactiveTransitionRecognizer)
+    }
+    
+    func handleTransitionRecognizer(sender:UIScreenEdgePanGestureRecognizer) {
+        if sender.state == UIGestureRecognizerState.began {
+            self.performSegue(withIdentifier: "BackToFirstViewController", sender: sender)
+        }
+    }
 }
+
+

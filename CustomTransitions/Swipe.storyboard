@@ -43,6 +43,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Zwc-fb-LWU"/>
+                    <connections>
+                        <segue destination="wSk-7H-Ew8" kind="presentation" identifier="CustomTransition" id="sUJ-gQ-XZu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="laB-vd-gDK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -81,10 +84,14 @@
                             <constraint firstItem="K3u-Jq-0Cs" firstAttribute="top" secondItem="9II-64-30U" secondAttribute="bottom" constant="158" id="yU0-ma-QrX"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="eKd-uU-cH1" kind="unwind" identifier="BackToFirstViewController" unwindAction="unwindToSwipeFirstViewControllerWithSender:" id="Zqp-yr-Ni1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G5s-FP-cmI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="eKd-uU-cH1" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1364" y="201"/>
+            <point key="canvasLocation" x="1524" y="205"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="o38-tP-y7r">
