@@ -14,14 +14,30 @@ class SwipeTransition:UIPercentDrivenInteractiveTransition {
     var transitionContext:UIViewControllerContextTransitioning?
     var edge:UIRectEdge?
     
+    // MARK: - Initialization
+    
     convenience init(gestureRecognizer:UIPanGestureRecognizer) {
         self.init()
         self.gestureRecognizer = gestureRecognizer
         gestureRecognizer.addTarget(self, action: #selector(gestureRecognizeDidUpdate))
     }
     
-    // MARK: - Gesture Handler
+    // -----------------------------------------------------------------------------------------------------
     
+    deinit {
+        self.gestureRecognizer?.removeTarget(self, action: #selector(gestureRecognizeDidUpdate))
+    }
+    
+    // -----------------------------------------------------------------------------------------------------
+    
+    override func startInteractiveTransition(_ transitionContext: UIViewControllerContextTransitioning) {
+        self.transitionContext = transitionContext;
+        super.startInteractiveTransition(transitionContext)
+    }
+    
+    
+    // -----------------------------------------------------------------------------------------------------
+    // MARK: - Gesture Handler
     
     func gestureRecognizeDidUpdate(gestureRecognizer:UIScreenEdgePanGestureRecognizer) {
         switch gestureRecognizer.state {
