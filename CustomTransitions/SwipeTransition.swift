@@ -83,32 +83,5 @@ class SwipeTransition:UIPercentDrivenInteractiveTransition {
     }
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    //    - (instancetype)initWithGestureRecognizer:(UIScreenEdgePanGestureRecognizer*)gestureRecognizer edgeForDragging:(UIRectEdge)edge NS_DESIGNATED_INITIALIZER;
-    //
-    //    - (instancetype)init NS_UNAVAILABLE;
-    
-    convenience init(gestureRecognizer:UIScreenEdgePanGestureRecognizer, edgeForDragging edge:UIRectEdge){
-        self.init()
-        
-        let condition = (edge == UIRectEdge.top || edge == UIRectEdge.bottom || edge == UIRectEdge.left || edge == UIRectEdge.right)
-        
-        assert(condition,"Warning: 'edgeForDragging' must be one of UIRectEdgeTop, UIRectEdgeBottom, UIRectEdgeLeft, or UIRectEdgeRight.")
-        
-        
-    }
-    
 }
 
