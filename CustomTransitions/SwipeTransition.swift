@@ -1,4 +1,4 @@
-//  SwipeTransition.swift
+//  SwipeTransitionDelegate.swift
 //  CustomTransitions
 //
 //  Created by Frederick C. Lee on 11/4/16.
@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class SwipeTransition:UIPercentDrivenInteractiveTransition {
+class SwipeTransitionDelegate:UIPercentDrivenInteractiveTransition {
     
     var gestureRecognizer:UIPanGestureRecognizer?
     var transitionContext:UIViewControllerContextTransitioning?

@@ -11,9 +11,9 @@ import UIKit
 class SwipeFirstViewController:UIViewController {
     
     // Lazy load:
-    var swipeTransitionDelegate:SwipeTransition? {
+    var swipeTransitionDelegate:SwipeTransitionDelegate? {
         if nil == self.swipeTransitionDelegate {
-            return SwipeTransition()
+            return SwipeTransitionDelegate()
         }
         return self.swipeTransitionDelegate
     }
@@ -108,7 +108,7 @@ class SwipeFirstViewController:UIViewController {
         if (sender.state == UIGestureRecognizerState.began) {
             self.performSegue(withIdentifier: "CustomTransition", sender: sender)
         }
-        // Remaining cases are handled by the SwipeTransition.
+        // Remaining cases are handled by the SwipeTransitionDelegate.
     }
     
     // -----------------------------------------------------------------------------------------------------
