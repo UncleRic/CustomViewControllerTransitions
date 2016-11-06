@@ -11,11 +11,14 @@ import UIKit
 class SwipeFirstViewController:UIViewController {
     
     // Lazy load:
+    
+    var _swipeTransitionDelegate:SwipeTransitionDelegate?
+    
     var swipeTransitionDelegate:SwipeTransitionDelegate? {
-        if nil == self.swipeTransitionDelegate {
-            return SwipeTransitionDelegate()
+        if nil == _swipeTransitionDelegate {
+            _swipeTransitionDelegate = SwipeTransitionDelegate()
         }
-        return self.swipeTransitionDelegate
+        return _swipeTransitionDelegate
     }
     
     override func viewDidLoad() {
@@ -62,6 +65,7 @@ class SwipeFirstViewController:UIViewController {
 }
 
 // ===================================================================================================
+// MARK:
 
 class SwipeSecondViewController:UIViewController {
     

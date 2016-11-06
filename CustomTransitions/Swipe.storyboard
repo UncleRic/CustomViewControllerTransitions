@@ -32,6 +32,9 @@
                                 <state key="normal" title="Present With Custom Transition">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="wSk-7H-Ew8" kind="presentation" identifier="CustomTransition" id="bCf-bN-Kss"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.92540520429999995" green="0.7561275959" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -49,9 +52,6 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <segue destination="wSk-7H-Ew8" kind="presentation" identifier="CustomTransition" id="sUJ-gQ-XZu"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="laB-vd-gDK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -80,6 +80,9 @@
                                 <state key="normal" title="Dismiss">
                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <segue destination="eKd-uU-cH1" kind="unwind" unwindAction="unwindToSwipeFirstViewControllerWithSender:" id="lXJ-Np-24a"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.74821950449999997" blue="0.65809800650000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -90,9 +93,6 @@
                             <constraint firstItem="K3u-Jq-0Cs" firstAttribute="top" secondItem="9II-64-30U" secondAttribute="bottom" constant="158" id="yU0-ma-QrX"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <segue destination="eKd-uU-cH1" kind="unwind" identifier="BackToFirstViewController" unwindAction="unwindToSwipeFirstViewControllerWithSender:" id="Zqp-yr-Ni1"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G5s-FP-cmI" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="eKd-uU-cH1" userLabel="Exit" sceneMemberID="exit"/>
