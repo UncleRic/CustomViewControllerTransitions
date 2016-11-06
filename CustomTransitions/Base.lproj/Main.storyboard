@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Custom Transitions-->
+        <!--Main Transitions-->
         <scene sceneID="Eqk-Ag-9ve">
             <objects>
-                <tableViewController id="o7A-bg-aUF" customClass="MenuTableViewController" customModule="CustomTransitions" sceneMemberID="viewController">
+                <tableViewController title="Main Transitions" id="o7A-bg-aUF" customClass="MenuTableViewController" customModule="CustomTransitions" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="aec-dD-uw8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -20,7 +20,7 @@
                         <sections>
                             <tableViewSection headerTitle="Presentation Transitions" id="Jfx-FR-cdE">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="bsM-bj-pko" detailTextLabel="9Yl-2B-7U1" style="IBUITableViewCellStyleSubtitle" id="Bdv-lJ-UjN">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="bsM-bj-pko" detailTextLabel="9Yl-2B-7U1" style="IBUITableViewCellStyleSubtitle" id="Bdv-lJ-UjN" userLabel="Cross-Dissolve Cell">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bdv-lJ-UjN" id="SdE-sb-LE2">
@@ -47,7 +47,7 @@
                                             <segue destination="SHG-jH-Awx" kind="custom" identifier="CrossDissolve" customClass="ExternalStoryboardSegue" customModule="CustomTransitions" customModuleProvider="target" id="LoR-2F-tHz"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="Jqt-qA-ezh" detailTextLabel="Obn-DX-gzy" style="IBUITableViewCellStyleSubtitle" id="1LL-7t-L1k">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="Jqt-qA-ezh" detailTextLabel="Obn-DX-gzy" style="IBUITableViewCellStyleSubtitle" id="1LL-7t-L1k" userLabel="Swipe Cell">
                                         <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1LL-7t-L1k" id="p71-Hu-0Lw">
@@ -71,10 +71,10 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="HIY-yP-nRw" kind="custom" identifier="Swipe" trigger="accessoryAction" customClass="ExternalStoryboardSegue" customModule="CustomTransitions" customModuleProvider="target" id="53e-bh-u2X"/>
+                                            <segue destination="HIY-yP-nRw" kind="custom" identifier="Swipe" customClass="ExternalStoryboardSegue" customModule="CustomTransitions" customModuleProvider="target" id="NKL-0c-d0Y"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="xHr-XT-sFJ" detailTextLabel="Srv-Gi-dJt" style="IBUITableViewCellStyleSubtitle" id="f2O-uq-dov">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="xHr-XT-sFJ" detailTextLabel="Srv-Gi-dJt" style="IBUITableViewCellStyleSubtitle" id="f2O-uq-dov" userLabel="Custom-Presentation Cell">
                                         <rect key="frame" x="0.0" y="116" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="f2O-uq-dov" id="AmW-Ba-3wZ">
@@ -101,7 +101,7 @@
                                             <segue destination="Dz0-VN-w1X" kind="custom" identifier="CustomPresentation" trigger="accessoryAction" customClass="ExternalStoryboardSegue" customModule="CustomTransitions" customModuleProvider="target" id="Cow-bA-Xza"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="dxd-AD-cGG" detailTextLabel="4Ew-jn-QcY" style="IBUITableViewCellStyleSubtitle" id="7TD-MB-XRS">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" textLabel="dxd-AD-cGG" detailTextLabel="4Ew-jn-QcY" style="IBUITableViewCellStyleSubtitle" id="7TD-MB-XRS" userLabel="Adaptive-Presentation Cell">
                                         <rect key="frame" x="0.0" y="160" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7TD-MB-XRS" id="r5C-Ja-EZ4">
@@ -202,7 +202,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P0T-r6-dX4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1858" y="-205"/>
+            <point key="canvasLocation" x="1818" y="-211"/>
         </scene>
         <!--1) Cross Dissolve-->
         <scene sceneID="qJF-Sy-0C8">
@@ -298,7 +298,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BGL-kk-Lbo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2036" y="-1152"/>
+            <point key="canvasLocation" x="2324" y="-1274"/>
         </scene>
     </scenes>
 </document>
