@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SwipeTransitionAnimator:UIViewControllerAnimatedTransitioning {
+class SwipeTransitionAnimator:NSObject, UIViewControllerAnimatedTransitioning {
     var targetEdge:UIRectEdge?
     
     convenience init(targetEdge:UIRectEdge) {
@@ -15,10 +15,12 @@ class SwipeTransitionAnimator:UIViewControllerAnimatedTransitioning {
         self.targetEdge = targetEdge
     }
     
+   // func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.35
     }
     
+   // func animateTransition(using transitionContext: UIViewControllerContextTransitioning)
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         guard
             let fromViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from),
@@ -35,7 +37,7 @@ class SwipeTransitionAnimator:UIViewControllerAnimatedTransitioning {
         let fromFrame = transitionContext.initialFrame(for: fromViewController)
         let toFrame = transitionContext.finalFrame(for: toViewController)
         
-        var offset:CGVector
+        var offset:CGVector = CGVectorFromString("{0, 0}")
         
         if (self.targetEdge == UIRectEdge.top) {
             offset = CGVector(dx: 0.0, dy: 1.0)
