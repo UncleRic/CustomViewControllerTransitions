@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Swipe First View Controller-->
+        <!--Swipe-->
         <scene sceneID="4Jv-gW-7bC">
             <objects>
                 <viewController id="hBH-mY-99a" customClass="SwipeFirstViewController" customModule="CustomTransitions" customModuleProvider="target" sceneMemberID="viewController">
@@ -42,7 +42,13 @@
                             <constraint firstItem="0rT-0L-VJ2" firstAttribute="centerX" secondItem="He2-ZQ-QWe" secondAttribute="centerX" id="wC9-fZ-2Sk"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="Zwc-fb-LWU"/>
+                    <navigationItem key="navigationItem" title="Swipe" id="Lhn-PC-uEG">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="k2d-eY-AGM">
+                            <connections>
+                                <segue destination="eKd-uU-cH1" kind="unwind" unwindAction="unwindToMenuViewControllerWithSender:" id="GLF-RR-WDE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="wSk-7H-Ew8" kind="presentation" identifier="CustomTransition" id="sUJ-gQ-XZu"/>
                     </connections>
@@ -98,7 +104,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="r1f-lC-zO7" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="llf-lc-H6k">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="llf-lc-H6k">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
