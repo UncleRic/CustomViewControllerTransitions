@@ -8,80 +8,41 @@
 import Foundation
 import UIKit
 
-class SwipeTransitionDelegate:UIPercentDrivenInteractiveTransition {
+class SwipeTransitionDelegate:NSObject, UIViewControllerTransitioningDelegate {
     
-    var gestureRecognizer:UIPanGestureRecognizer?
-    var transitionContext:UIViewControllerContextTransitioning?
-    var edge:UIRectEdge?
+    var gestureRecognizer:UIScreenEdgePanGestureRecognizer?
+    var targetEdge:UIRectEdge?
     
-    // MARK: - Initialization
-    
-    convenience init(gestureRecognizer:UIPanGestureRecognizer) {
-        self.init()
-        self.gestureRecognizer = gestureRecognizer
-        gestureRecognizer.addTarget(self, action: #selector(gestureRecognizeDidUpdate))
+    func animationController(forPresented presented: UIViewController,
+                             presenting: UIViewController,
+                             source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return SwipeTransitionAnimator(targetEdge: self.targetEdge!)
     }
     
     // -----------------------------------------------------------------------------------------------------
     
-    deinit {
-        self.gestureRecognizer?.removeTarget(self, action: #selector(gestureRecognizeDidUpdate))
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return SwipeTransitionAnimator(targetEdge: self.targetEdge!)
     }
     
     // -----------------------------------------------------------------------------------------------------
     
-    override func startInteractiveTransition(_ transitionContext: UIViewControllerContextTransitioning) {
-        self.transitionContext = transitionContext;
-        super.startInteractiveTransition(transitionContext)
-    }
-    
-    
-    // -----------------------------------------------------------------------------------------------------
-    // MARK: - Gesture Handler
-    
-    func gestureRecognizeDidUpdate(gestureRecognizer:UIScreenEdgePanGestureRecognizer) {
-        switch gestureRecognizer.state {
-        case UIGestureRecognizerState.began:
-            break
-        case UIGestureRecognizerState.changed:
-            // We have been dragging! Update the transition context accordingly.
-            self.update(self.percentForGesture(gesture: gestureRecognizer))
-            break
-        case UIGestureRecognizerState.ended:
-            if (self.percentForGesture(gesture: gestureRecognizer) >= 0.5) {
-                self.finish()
-            } else {
-                self.cancel()
-            }
-            break
-        default:
-            self.cancel()
-            break
-        }
-    }
-    
-    // ----------------------------------------------------------------------------
-    
-    func percentForGesture(gesture:UIScreenEdgePanGestureRecognizer) -> CGFloat {
-        let transitionContainerView = self.transitionContext?.containerView
-        let locationInSourceView = gesture.location(in: transitionContainerView)
-        let width = (transitionContainerView?.bounds)!.width
-        let height = (transitionContainerView?.bounds)!.height
-        
-        
-        if (self.edge == UIRectEdge.right) {
-            return (width - locationInSourceView.x) / width;
-        } else if (self.edge == UIRectEdge.left) {
-            return locationInSourceView.x / width;
-        } else if (self.edge == UIRectEdge.bottom) {
-            return (height - locationInSourceView.y) / height;
-        } else if (self.edge == UIRectEdge.top) {
-            return locationInSourceView.y / height;
+    func interactionControllerForPresentation(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        if ((self.gestureRecognizer) != nil) {
+            return SwipeTransitionInteractionController(gestureRecognizer: self.gestureRecognizer!, edgeForDragging: self.targetEdge!)
         } else {
-            return 0;
+            return nil
         }
     }
     
+    // -----------------------------------------------------------------------------------------------------
     
+    func interactionControllerForDismissal(using animator: UIViewControllerAnimatedTransitioning) -> UIViewControllerInteractiveTransitioning? {
+        if ((self.gestureRecognizer) != nil) {
+            return SwipeTransitionInteractionController(gestureRecognizer: self.gestureRecognizer!, edgeForDragging: self.targetEdge!)
+        } else {
+            return nil
+        }
+    }
 }
 

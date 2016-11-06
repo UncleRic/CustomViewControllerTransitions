@@ -23,6 +23,8 @@ class SwipeTransitionInteractionController : UIPercentDrivenInteractiveTransitio
         self.gestureRecognizer.addTarget(self, action: #selector(handleGestureRecognizer))
     }
     
+    // -----------------------------------------------------------------------------------------------------
+    
     deinit {
         self.gestureRecognizer.removeTarget(self, action: #selector(handleGestureRecognizer))
     }
@@ -33,6 +35,8 @@ class SwipeTransitionInteractionController : UIPercentDrivenInteractiveTransitio
         self.transitioningContext = transitionContext
         super.startInteractiveTransition(transitionContext)
     }
+    
+    // -----------------------------------------------------------------------------------------------------
     
     func percentForGesture(gesture:UIScreenEdgePanGestureRecognizer) -> CGFloat {
         let transitionContainerView = self.transitioningContext.containerView

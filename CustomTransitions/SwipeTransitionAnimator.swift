@@ -9,18 +9,21 @@ import UIKit
 
 class SwipeTransitionAnimator:NSObject, UIViewControllerAnimatedTransitioning {
     var targetEdge:UIRectEdge?
-    
+    // MARK: - Initialization
     convenience init(targetEdge:UIRectEdge) {
         self.init()
         self.targetEdge = targetEdge
     }
     
-   // func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval
+    // -----------------------------------------------------------------------------------------------------
+    // MARK: -
+    
     func transitionDuration(using transitionContext: UIViewControllerContextTransitioning?) -> TimeInterval {
         return 0.35
     }
     
-   // func animateTransition(using transitionContext: UIViewControllerContextTransitioning)
+    // -----------------------------------------------------------------------------------------------------
+    
     func animateTransition(using transitionContext: UIViewControllerContextTransitioning) {
         guard
             let fromViewController = transitionContext.viewController(forKey: UITransitionContextViewControllerKey.from),
@@ -72,20 +75,20 @@ class SwipeTransitionAnimator:NSObject, UIViewControllerAnimatedTransitioning {
         let transitionDuration = self.transitionDuration(using: transitionContext)
         
         UIView.animate(withDuration: transitionDuration, animations: {
-                if (isPresenting) {
-                    toView.frame = toFrame;
-                } else {
-                    // For a dismissal, the fromView slides off the screen.
-                    let dx = fromFrame.size.width * offset.dx
-                    let dy = fromFrame.size.height * offset.dy
-                    fromView.frame = fromView.frame.offsetBy(dx:dx , dy:dy )
-                }
-            }, completion: {finished in
-                let wasCancelled = transitionContext.transitionWasCancelled
-                if (wasCancelled) {
-                    toView.removeFromSuperview()
-                }
-                transitionContext.completeTransition(!wasCancelled)
-            })
+            if (isPresenting) {
+                toView.frame = toFrame;
+            } else {
+                // For a dismissal, the fromView slides off the screen.
+                let dx = fromFrame.size.width * offset.dx
+                let dy = fromFrame.size.height * offset.dy
+                fromView.frame = fromView.frame.offsetBy(dx:dx , dy:dy )
+            }
+        }, completion: {finished in
+            let wasCancelled = transitionContext.transitionWasCancelled
+            if (wasCancelled) {
+                toView.removeFromSuperview()
+            }
+            transitionContext.completeTransition(!wasCancelled)
+        })
     }
 }
