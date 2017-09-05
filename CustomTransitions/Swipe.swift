@@ -76,7 +76,7 @@ class SwipeSecondViewController:UIViewController {
         self.view.addGestureRecognizer(interactiveTransitionRecognizer)
     }
     
-    func handleTransitionRecognizer(sender:UIScreenEdgePanGestureRecognizer) {
+    @objc func handleTransitionRecognizer(sender:UIScreenEdgePanGestureRecognizer) {
         if sender.state == UIGestureRecognizerState.began {
             self.performSegue(withIdentifier: "BackToFirstViewController", sender: sender)
         }

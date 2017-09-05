@@ -60,7 +60,7 @@ class SwipeTransitionInteractionController : UIPercentDrivenInteractiveTransitio
     // -----------------------------------------------------------------------------------------------------
     // MARK: - Gesture Handler
     
-    func handleGestureRecognizer(gestureRecognizer:UIScreenEdgePanGestureRecognizer) {
+    @objc func handleGestureRecognizer(gestureRecognizer:UIScreenEdgePanGestureRecognizer) {
         switch (gestureRecognizer.state) {
         case UIGestureRecognizerState.began:
             break
